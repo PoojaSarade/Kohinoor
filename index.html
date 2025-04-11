@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kohinoor Projects</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <script>
+        function sendData() {
+            // Get values from input fields
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const message = document.getElementById("message").value;
+
+            // Prepare request data
+            const requestData = {
+                name: name,
+                email: email,
+                phone: phone,
+                message: message
+            };
+
+            // API endpoint (Replace with actual API URL)
+            const apiUrl = "https://p7hjkeqa74.execute-api.eu-north-1.amazonaws.com/prod/contactform";
+
+            // Fetch API with POST request
+            fetch(apiUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(requestData)  // Convert object to JSON
+            })
+                .then(response => response.json())  // Convert response to JSON
+                .then(data => {
+                    document.getElementById("response").innerText = JSON.stringify(data, null, 2);
+                })
+                .catch(error => console.error("Error:", error));
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var modal = document.querySelector(".modal");
+            var closeButton = document.querySelector(".form-close-btn");
+            var leftSection = document.getElementById("left-section");
+            if(closeButton){
+            closeButton.addEventListener("click", function () {
+              if(model) modal.style.display = "none";
+              if(leftSection) leftSection.style.display = "block"
+            });
+        }
+            // Optional: Close modal when clicking outside the form
+            window.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                if(modal) modal.style.display = "none";
+                 if(leftSection) leftSection.style.display = "block"
+                }
+            });
+        });
+
+    </script>
+<script>
+    function sendData1() {
+        // Get values from input fields
+        const name = document.getElementById("name1").value;
+        const email = document.getElementById("email1").value;
+        const phone = document.getElementById("phone1").value;
+        const message = document.getElementById("message1").value;
+
+        // Prepare request data
+        const requestData = {
+            name: name,
+            email: email,
+            phone: phone,
+            message: message
+        };
+
+        // API endpoint (Replace with actual API URL)
+        const apiUrl = "https://p7hjkeqa74.execute-api.eu-north-1.amazonaws.com/prod/contactform";
+
+        // Fetch API with POST request
+        fetch(apiUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(requestData)  // Convert object to JSON
+        })
+            .then(response => response.json())  // Convert response to JSON
+            .then(data => {
+                document.getElementById("response").innerText = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error("Error:", error));
+    }
+</script>
+
+    <div id="landingModal" class="modal">
+        <div class="modal-content">
+            <img src="img/about_img.png" alt="Project Image" class="modal-image">
+
+            <div class="form-wrapper">
+                <span class="form-close-btn">&times;</span>
+                <h2 class="form-heading">Kohinoor Projects In Pune</h2>
+                <p class="form-description"><strong>Type:</strong> Luxurious 2 & 3 BHK Apartments</p>
+                <!-- <form class="aform"> -->
+                    <div class="input-container-aform">
+                        <img src="img/user.png" alt="User Icon">
+                        <input type="text" id="name" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="input-container-aform">
+                        <img src="img/mail.png" alt="User Icon">
+                        <input type="email" id="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-container-aform">
+                        <img src="img/phone (1).png" alt="User Icon">
+                        <input type="tel" id="phone" placeholder="Phone/Mobile" required>
+                    </div>
+                    <div class="input-container-aform">
+                        <img src="img/comment.png" alt="User Icon">
+                        <input type="msg" id="message" placeholder="Message">
+                    </div>
+                    <button onclick="sendData()">GET CALL BACK</button>
+                <!-- </form> -->
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function toggleMobileMenu() {
+          const menu = document.getElementById("mobileMenu");
+          menu.classList.toggle("show");
+        }
+      </script>
+      <!-- <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+      
+        hamburger.addEventListener('click', () => {
+          navMenu.classList.toggle('show');
+        });
+      </script> -->
+      
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="img/logo1.png" alt="Kohinoor Logo">
+        </div>
+        <div class="hamburger" onclick="toggleMobileMenu()">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+          </div>
+        <nav>
+             <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#visit">Schedule Site Visit</a></li>
+                <li><a href="#amenties">Amenities</a></li>
+                <li><a href="#contactus">Contact Us</a></li>
+            </ul>
+        </div>
+        </nav>
+        <a href="tel:+916364884021" class="contact-button">
+            <div class="icon">
+                <img src="img/phone.png" alt="Phone Icon">
+            </div>
+            <span>+91-9223003742</span>
+        </a>
+    </header>
+
+    <section class="slider-container" id="home">
+        <div class="slider">
+            <div class="slide"><img src="img/banner_bg.png" alt="Image 1"></div>
+            <div class="slide"><img src="img/banner_bg1.png" alt="Image 2"></div>
+            <div class="slide"><img src="img/next3.jpg" alt="Image 3"></div>
+            <div class="slide"><img src="img/next4.jpg" alt="Image 4"></div>
+            <div class="slide"><img src="img/next5.jpg" alt="Image 5"></div>
+            <div class="slide"><img src="img/next9.jpg" alt="Image 6"></div>
+
+        </div>
+    </section>
+
+
+
+    <div class="left-section">
+        <h1>Kohinoor Projects In Pune</h1>
+        <ul>
+            <li><span class="diamond">◆</span> Excellent Location</li>
+            <li><span class="diamond">◆</span> World-Class Amenities</li>
+            <li><span class="diamond">◆</span> Luxury Property</li>
+        </ul>
+
+        <button class="luxury-btn">Luxurious 2 & 3 BHK Apartments</button>
+
+        <div class="price">
+            <img src="img/rupees.png" alt="Rupee" class="rupee-icon">
+            <p class="pind">Starting Price:</p> <span class="price-text">74 Lacs* Onwards</span>
+        </div>
+    </div>
+
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <h2>Schedule A Site Visit</h2>
+        <p>Please fill out the form below, our expert will get back to you soon.</p>
+        <!-- <form> -->
+            <div class="input-container">
+                <img src="img/user.png" alt="User Icon">
+                <input type="text" id="name" placeholder="Your Full Name" required>
+            </div>
+            <div class="input-container">
+                <img src="img/mail.png" alt="User Icon">
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-container">
+                <img src="img/phone (1).png" alt="User Icon">
+                <input type="tel" id="phone" placeholder="Phone/Mobile" required>
+            </div>
+            <div class="input-container">
+                <img src="img/comment.png" alt="User Icon">
+                <input type="msg" id="message" placeholder="Message">
+            </div>
+            <button onclick="sendData()">GET CALL BACK</button>
+        <!-- </form> -->
+    </div>
+    </section>
+
+
+    <!-- second section -->
+
+    <div class="card-heading-container" id="project">
+        <h1 class="card-heading">Kohinoor Projects In Pune</h1>
+        <p class="card-subheading">Find your dream home from our Premium Properties</p>
+    </div>
+
+    <div class="containerr">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="badge">New Launch</div>
+            <img src="img/Kohinoor Central Park.jpg" alt="Kohinoor Central Park">
+            <div class="card-content">
+                <h2>Kohinoor Central Park</h2>
+                <p class="location">
+                    <img src="img/maps-and-flags.png" class="icon"> At Hinjewadi Phase 2, Pune
+                </p>
+                <p><strong>Type:</strong> Luxurious 2 & 3 BHK Homes</p>
+                <button class="price-btn">Start At : ₹ 74 Lacs* Onwards</button>
+                <ul class="features">
+                    <li><img src="img/check.png" class="icon"> Total Towers - 10</li>
+                    <li><img src="img/check.png" class="icon"> Total Land Parcel - FreeHold 13.5 A</li>
+                </ul>
+                <button class="enquire-btn">Enquire Now</button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="img/Kohinoor Riverdale.jpg" alt="Kohinoor Riverdale">
+            <div class="card-content">
+                <h2>Kohinoor Riverdale</h2>
+                <p class="location">
+                    <img src="img/maps-and-flags.png" class="icon"> At Kharadi, Pune
+                </p>
+                <p><strong>Type:</strong> Luxurious 2 & 3 BHK Apartments</p>
+                <button class="price-btn">Start At : ₹ 80.5 Lacs* Onwards</button>
+                <ul class="features">
+                    <li><img src="img/check.png" class="icon"> Land Parcel: 5 Acres</li>
+                    <li><img src="img/check.png" class="icon"> Towers: 5</li>
+                </ul>
+                <button class="enquire-btn">Enquire Now</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =========== amenities section start =============== -->
+    <div class="features-container" id="amenties">
+        <h2 class="features-heading">Features &amp; Amenities</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="img/amenities_1.png" width="60" alt="">
+                <h4 class="pt-2"> Swimming Pool</h4>
+            </div>
+
+            <div class="feature-card">
+                <img src="img/amenities_2.png" width="60" alt="">
+
+                <h4 class="pt-2">Multi Purpose Hall</h4>
+            </div>
+
+            <div class="feature-card">
+                <img src="img/amenities_3.png" width="60" alt="">
+
+                <h4 class="pt-2"> Mini Theatre</h4>
+            </div>
+
+
+            <div class="feature-card">
+                <img src="img/amenities_4.png" width="60" alt="">
+
+                <h4 class="pt-2"> Visitors Parking</h4>
+            </div>
+
+
+            <div class="feature-card">
+                <img src="img/amenities_5.png" width="60" alt="">
+
+                <h4 class="pt-2"> Cricket Pitch</h4>
+            </div>
+
+
+            <div class="feature-card">
+                <img src="img/amenities_6.png" width="60" alt="">
+
+                <h4 class="pt-2">Cycling Track</h4>
+            </div>
+
+
+            <div class="feature-card">
+                <img src="img/amenities_7.png" width="60" alt="">
+
+                <h4 class="pt-2"> Gymnasium</h4>
+            </div>
+
+            <div class="feature-card">
+                <img src="img/amenities_8.png" width="60" alt="">
+
+                <h4 class="pt-2"> Senior Citizen Sitout</h4>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- =========== amenities section start =============== -->
+
+
+
+    <div class="containerf" id="visit">
+        <div class="text-section">
+            <h2>About Developer</h2>
+            <p>Check out this residential project for sale by Kohinoor Group in Kharadi, Pune.
+                Kohinoor Riverdale offers Apartment as property type. The project has been
+                developed in an area of 5 Acres. It is currently Under Construction. Available
+                configurations include 2 BHK, 3 BHK. Kohinoor Riverdale possession is Dec, 2027.
+                There are 5 buildings in this property. The address of Kohinoor Riverdale is Kharadi.</p>
+
+            <div class="call-section">
+                <img src="img/calling.png" alt="Call Icon">
+                <div>
+                    <p>Call Us Anytime</p>
+                    <span style="color: white;">+91-9223003742</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section" id="contactus">
+            <h3>Schedule A Site Visit</h3>
+            <div class="input-container-form-section">
+                <img src="img/user.png" alt="User Icon">
+                <input type="text" id="name1" placeholder="Your Full Name" required>
+            </div>
+            <div class="input-container-form-section">
+                <img src="img/mail.png" alt="User Icon">
+                <input type="email" id="email1" placeholder="Email Address" required>
+            </div>
+            <div class="input-container-form-section">
+                <img src="img/phone (1).png" alt="User Icon">
+                <input type="tel" id="phone1" placeholder="Phone/Mobile" required>
+            </div>
+            <div class="input-container-form-section">
+                <img src="img/comment.png" alt="User Icon">
+                <input type="msg" id="message1" placeholder="Message">
+            </div>
+            <button onclick="sendData1()" class="submit-btn">GET CALL BACK</button>
+        </div>
+    </div>
+
+    <p class="disclaimer">
+        <strong>Disclaimer:</strong> The content is for information purposes only and does not constitute
+        an offer to avail of any service. Prices mentioned are subject to change without notice and properties.
+        mentioned are subject to availability. Images for representation purposes only. This website is belong to
+        authorized marketing partner.
+    </p>
+
+    <p class="manp">Agent Rera : A52100038557 | Projects Rera : Kohinoor Riverdale . P52100056021 | Kohinoor Central
+        Park . P52100056358.</p>
+
+    <footer>Privacy Policy | Digital Media Planned by Umiko Web</footer>
+
+</body>
+
+</html>
